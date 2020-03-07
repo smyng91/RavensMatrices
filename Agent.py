@@ -56,6 +56,7 @@ class Solver:
 
         
 
+
         # Check if A=B=C
         if Operation.test_equal_all( fig_progression ):
             fig_sol = ImgAnalysis.match_figs(fig_progression[0], fig_choice) 
