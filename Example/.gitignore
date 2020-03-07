@@ -1,0 +1,6 @@
+.DS_Store
+*.pyc
+AgentAnswers.csv
+ProblemResults.csv
+SetResults.csv
+.bonnie
