@@ -200,7 +200,7 @@ def object_rotated(a, b):
 class Frame:
     '''Frame is the relationship between two/three figures in a Ravens problem'''
 
-    def __init__(self, figures):
+    def __init__( figures):
         self.figures = figures
         self.images = []
         for i in self.figures:
@@ -445,7 +445,7 @@ class Frame:
 class Node:
     '''Holds information about each object inside a raven figure'''
 
-    def __init__(self, pixels, match, transform, match_weight, name):
+    def __init__( pixels, match, transform, match_weight, name):
         self.pixels = pixels
         self.match = match
         self.transform = transform
@@ -472,7 +472,7 @@ class Agent:
     def __init__(self):
         pass
 
-    def create_nodes(self, figures):
+    def create_nodes( figures):
         '''Seperates each figure into nodes for the creation of the semantic net '''
         for figure_name in figures:
             this_figure = figures[figure_name]
@@ -513,7 +513,7 @@ class Agent:
             this_figure.attr["Image"][np.where(this_figure.attr["Image"] > 1)] = IMAGE_INTENSITY
 
     # method that sets objects frame values
-    def match(self, a, b, transform):
+    def match( a, b, transform):
         if transform == "DELETED":
             a.transform = transform
         elif transform == "ADDED":
@@ -524,7 +524,7 @@ class Agent:
             b.match = a.name
             b.transform = transform
 
-    def match_nodes(self, fig_a, fig_b):
+    def match_nodes( fig_a, fig_b):
         # print("Entered match_nodes")
         # print("Frame: " + str(fig_a.name))
         # print("Frame: " + str(fig_b.name))
@@ -578,13 +578,13 @@ class Agent:
                 elif (len(fig_a.frame["Nodes"]) < len(fig_b.frame["Nodes"])) and b.match == "none":
                     b.transform = "ADDED"
 
-    def reset_frame_nodes(self, a):
+    def reset_frame_nodes( a):
         for i in a:
             i.transform = "not matched"
             i.match = "none"
             i.match_weight = 0
 
-    def generate_semantic_net(self, fig1, fig2):
+    def generate_semantic_net( fig1, fig2):
         
         if self.match_nodes(fig1, fig2) == -1:
             return -1
@@ -595,7 +595,7 @@ class Agent:
 
         return net
 
-    def compare_frames(self, fr_1, fr_2, problem):
+    def compare_frames( fr_1, fr_2, problem):
         confidence = 1
 
         # Compare black difference
@@ -656,7 +656,7 @@ class Agent:
 
         return confidence
 
-    def solve_two(self, problem):
+    def solve_two( problem):
         p = problem
 
         answer = 1
@@ -704,7 +704,7 @@ class Agent:
 
         return answer
 
-    def solve_three(self, problem):
+    def solve_three( problem):
 
         letters = ["A", "B", "C", "D", "E", "F", "G", "H"]
         numbers = [1, 2, 3, 4, 5, 6, 7, 8]
@@ -789,7 +789,7 @@ class Agent:
     #
     # Make sure to return your answer *as an integer* at the end of Solve().
     # Returning your answer as a string may cause your program to crash.
-    def Solve(self, problem):
+    def Solve( problem):
 
 
         t0 = time()
